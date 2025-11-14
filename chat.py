@@ -37,8 +37,8 @@ class chatbot:
             ]
         )
         
-        format_docs = self.retriever.invoke(user_prompt)
-        context = self.format_doc(format_docs)
+        similar_docs = self.retriever.invoke(user_prompt)
+        context = self.format_doc(similar_docs)
 
         chain = prompt | self.llm | StrOutputParser()
 
